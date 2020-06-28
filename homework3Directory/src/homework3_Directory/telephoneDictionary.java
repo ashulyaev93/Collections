@@ -26,7 +26,7 @@ class PhoneDictionary {
         }
     }
 
-    //Вводим в справочник новые контакты;
+    //Вводим в справочник новые контакты
     public void add(String login, ArrayList<String> phones) {
         book.put(login, phones);
     }
