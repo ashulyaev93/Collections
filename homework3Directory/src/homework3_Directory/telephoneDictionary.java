@@ -27,8 +27,16 @@ class PhoneDictionary {
     }
 
     //Вводим в справочник новые контакты
-    public void add(String login, ArrayList<String> phones) {
-        book.put(login, phones);
+    public void add(String login, String phone) {
+        ArrayList<String> phones = book.get(login);//проверяем контакты по логину;
+
+        if(phones == null){//если человека с контактами не существует;
+            book.put(login,new ArrayList<>(Arrays.asList(phone))); //добавляем человека;
+        }else{
+            phones.add(phone);//если человек с контактами существует;
+            book.put(login, phones);//к его контактам добавляем ещё один номер, только
+            // это будет отдельной строкой, но так как HashMap не дублирует, он объединит в один массив;
+        }
     }
 
     //Вызываем в справочнике нужный нам контакт;
