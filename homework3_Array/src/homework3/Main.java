@@ -11,7 +11,7 @@ public class Main {
 
         Map<String, Integer> wordMap = new HashMap<String, Integer>();//создаём пустой Map;
 
-        for (String string : word) { //заполняем ключи;
+        for (String string : word) { //заполняем ключи
 
             if(wordMap.keySet().contains(string)) { //вызываем все ключи содержащиеся в массиве;
                 wordMap.put(string, wordMap.get(string) + 1); // если уже есть ключ, то прибавляем единицу;
